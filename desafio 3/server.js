@@ -1,13 +1,13 @@
 
 const express = require('express');
-const Container = require('./contenedor');
+const Contenedor = require('./container.js');
 
-const product = new Container('./desafio-3/productos.txt');
+const product = new Contenedor('./productos.txt');
 
 const app = express();
 
 app.get('/', (req, res) => {
-	res.send(`<h1 style= "color:blue">D-SHIRT</h1>`);
+	res.send(`<h1 style= "color:black">Bienvenidos a D-SHIRT</h1>`);
 });
 
 app.get('/productos', async (req, res) => {
