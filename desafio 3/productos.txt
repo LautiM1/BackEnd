@@ -4,13 +4,13 @@
     "title":"camisa1",
     "price":300,
     "thumbnail":"http://d3ugyf2ht6aenh.cloudfront.net/stores/402/355/products/whatsapp-image-2021-06-29-at-5-16-18-pm1-572adfb22b7700699d16252320791576-640-0.jpeg"
-}
+},
 {
     "id": 2,
     "title":"camisa2",
     "price":300,
     "thumbnail":"https://cf.shopee.com.ar/file/a59c5de860dee9a38bc28e4c4afdf9de"
-}
+},
 {
     "id": 3,
     "title":"camisa3",
