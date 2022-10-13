@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "camisa1",
+    "price": 300,
+    "thumbnail": "http://d3ugyf2ht6aenh.cloudfront.net/stores/402/355/products/whatsapp-image-2021-06-29-at-5-16-18-pm1-572adfb22b7700699d16252320791576-640-0.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "camisa3",
+    "price": 100,
+    "thumbnail": "https://d3ugyf2ht6aenh.cloudfront.net/stores/903/627/products/yakusa11-4064bf3966333c11a516155138827800-1024-1024.jpg"
+  },
+  {
+    "id": 4,
+    "title": "camisa3",
+    "price": 100,
+    "thumbnail": "https://d3ugyf2ht6aenh.cloudfront.net/stores/903/627/products/yakusa11-4064bf3966333c11a516155138827800-1024-1024.jpg"
+  },
+  {
+    "id": 2,
+    "title": "camisa3",
+    "price": 250,
+    "thumbnail": "https://d3ugyf2ht6aenh.cloudfront.net/stores/903/627/products/yakusa11-4064bf3966333c11a516155138827800-1024-1024.jpg"
+  }
+]
