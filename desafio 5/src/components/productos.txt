@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Lautaro",
+    "age": "21",
+    "picture": "https://image.shutterstock.com/image-vector/user-icon-man-person-people-260nw-1935032822.jpg"
+},
+  {
+    "name": "Julia",
+    "age": "21",
+    "picture": "https://image.shutterstock.com/image-vector/user-icon-man-person-people-260nw-1935032822.jpg"
+},
+  {
+    "name": "Lara",
+    "age": "21",
+    "picture": "https://image.shutterstock.com/image-vector/user-icon-man-person-people-260nw-1935032822.jpg"
+}
+]
