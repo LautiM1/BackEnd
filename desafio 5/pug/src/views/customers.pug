@@ -1,0 +1,21 @@
+html 
+    head 
+        title="Lista De Clientes"
+    body 
+    if customers.lenght > 0
+        each customers in customers 
+            table 
+                tr 
+                    th 
+                        td=customers.name
+                        td=customers.age 
+                        td=
+                            img(src=products.url width=50 px)
+        
+        else 
+            h2 No hay productos 
+        
+        a(href="/") home  
+
+
+

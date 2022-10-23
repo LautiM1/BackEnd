@@ -9,8 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
-app.engine('hbs', engine({extname: 'hbs'}))
-app.set('view engine', 'hbs')
+app.set('view engine', 'ejs')
 app.set('views', './src/views')
 app.use(express.static('public'))
 

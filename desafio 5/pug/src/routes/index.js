@@ -11,9 +11,21 @@ router.get('/customers', (req, res)=>{
 })
 
 router.post('/api/customers',(req,res)=>{
-    customers.addId(req.body)
-    console.log(customers.getAll())
-    res.redirect('/')
-}) 
+    try {
+        const { name, age, picture } = req.body;
+    
+        const addId = {
+          name: name,
+          age: age,
+          picture: picture,
+        };
+    
+        addId(addIds);
+        
+        return res.redirect("/");
+      } catch (error) {
+        res.send(error);
+      }
+    });
 
 export { router }
