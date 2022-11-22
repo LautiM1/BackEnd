@@ -1,0 +1,34 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "timestamp_prod": 1666882847030,
+        "name": "Mouse",
+        "price": "200",
+        "url": "https://cdn-icons-png.flaticon.com/512/3076/3076345.png",
+        "description": "Excellent mouse",
+        "code": "AAA111",
+        "stock": 5
+      },
+      {
+        "id": 2,
+        "timestamp_prod": 1666882868559,
+        "name": "Keyboard",
+        "price": "500",
+        "url": "https://cdn-icons-png.flaticon.com/512/689/689392.png",
+        "description": "Excellent keyboard",
+        "code": "AAA222",
+        "stock": 2
+      },
+      {
+        "id": 3,
+        "timestamp_prod": 1667309822858,
+        "name": "Screen wide",
+        "price": "500",
+        "url": "https://cdn-icons-png.flaticon.com/512/689/689392.png",
+        "description": "Excellent resolution",
+        "code": "AAA222",
+        "stock": 2
+      }
+    ]
+  }

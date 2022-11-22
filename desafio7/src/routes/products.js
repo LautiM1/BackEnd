@@ -1,0 +1,22 @@
+import express from "express";
+import { deleteProductById, getProductById, getProducts, saveProduct, updateProductById } from "../controllers/products.js";
+import { verifyRole } from "../middlewares/role.js";
+
+const productsRouter = express.Router();
+
+//get all products
+productsRouter.get("/", getProducts);
+
+//get product by id
+productsRouter.get("/:id", getProductById);
+
+//save new product
+productsRouter.post("/", verifyRole, saveProduct);
+
+//update product by id
+productsRouter.put("/:id", verifyRole, updateProductById);
+
+//delete product by id
+productsRouter.delete("/:id", verifyRole, deleteProductById);
+
+export default productsRouter;
