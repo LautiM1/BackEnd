@@ -1,0 +1,18 @@
+<table class="table table-success table-striped" style="width: 700px;margin-left:600px">
+  <thead>c
+    <tr>
+      <th scope="col">Titulo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+    <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.price}}</td>
+        <td><img width="70" src={{this.thumbnail}}/></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

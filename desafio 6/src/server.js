@@ -1,49 +1,46 @@
 const express = require("express");
-const {engine} =require("express-handlebars")
-const router = require("./routes/index.js")
-const{customers, mensajes} = require("./routes/index.js")
 const {Server} = require("socket.io")
-const fs = require('fs');
-// defino puerto
+const Customers = require("./components/Customers");
+
+const clientService = new Customers("productos.txt")
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
 const server = app.listen(PORT, ()=>console.log(`listening on port ${PORT}`));
 
-// middlewares y engine
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use("/", router);
-
-app.engine('hbs', engine({extname: 'hbs'}))
-app.set('view engine', 'hbs')
-app.set('views', './src/views')
-app.use(express.static('public'))
-
-
-// websocket
 const io = new Server(server);
 
-//connections
-io.on("connection",  (socket)=>{
-    console.log('nuevo usuario', socket.id)
+app.use(express.static(__dirname+"/public"));
 
-    io.sockets.emit('clientes', customers);
-    io.sockets.emit('chat', mensajes);
+const historicoMensajes = [];
 
-    socket.broadcast.emit('nuevoUsuario')
 
-    socket.on('nuevoCustomer', nuevoCustomer=>{
-        customers.push(nuevoCustomer)
-        fs.writeFileSync('./archivo.txt', JSON.stringify(customers))
-        io.sockets._onServerSideEmit('lista', customers)
+//websockets
+
+io.on("connection", async(socket)=>{
+    console.log("nuevo usuario conectado", socket.id);
+
+    //enviamos todos los productos al usuario cuando se conecte.
+    socket.emit("products", await clientService.getAll())
+
+    //recibimos nuevo cliente
+    socket.on("newClient", async(data)=>{
+        await clientService.save(data);
+        io.sockets.emit("products", await clientService.getAll());
     })
 
-    socket.on('newMsg', newMsj =>{
-        console.log(newMsj);
-        mensajes.push(newMsj)
-        fs.writeFileSync('./mensajes.txt', JSON.stringify(mensajes))
-        io.sockets.emit('chat', mensajes)
+    //enviar a todos menos socketconectado
+    socket.broadcast.emit("newUser");
+
+    //enviamos historal de mensajes
+    socket.emit("historico", historicoMensajes);
+
+    //recibimos mensajes
+    socket.on("message", data=>{
+        console.log(data);
+        historicoMensajes.push(data);
+
+        io.sockets.emit("historico", historicoMensajes);
     })
-    
-});
+})
